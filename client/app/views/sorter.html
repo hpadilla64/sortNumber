@@ -1,0 +1,28 @@
+<div ng-controller="ControllerSorter">
+    <h2>Agregue sus números</h2>
+    <div>
+        <h3>Números seleccionados</h3>
+        <span ng-repeat="number in selectedNumbers" ng-click="removeNumber({number})">
+            {{number}} <md-icon md-font-library="material-icons" >remove_circle_outline</md-icon>
+        </span>
+    </div>
+    <p>Agrege hasta cuatro números</p>
+    <md-input-container>
+        <label>Nuevo número</label>
+        <input type="number" ng-model="toAddNumber">
+    </md-input-container>
+
+    <md-button class="md-fab md-primary" ng-click="addNumber();" ng-disabled="selectedNumbers.length == 4">
+        <md-icon md-font-library="material-icons">add</md-icon>
+    </md-button>
+    <hr />
+    <md-button class="md-raised md-primary" ng-click="saveNumbers();" ng-disabled="selectedNumbers.length < 4">Guardar números</md-button>
+    <hr />
+    <h2>Histórico</h2>
+    <md-button class="md-raised" ng-click="getNumbers();">Cargar histórico</md-button>
+    <ul>
+        <li ng-repeat="historic in historial">
+            {{historic}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  },
+  "name": "sortnumbers",
+  "description": "",
+  "version": "1.0.0",
+  "main": "/server/www.js",
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpadilla64/sortNumber.git"
+  },
+  "author": "Hector Padilla Oyervidez",
+  "bugs": {
+    "url": "https://github.com/hpadilla64/sortNumber/issues"
+  },
+  "homepage": "https://github.com/hpadilla64/sortNumber#readme"
+}
