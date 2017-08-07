@@ -9,9 +9,8 @@
     <p>Agrege hasta cuatro números</p>
     <md-input-container>
         <label>Nuevo número</label>
-        <input type="number" ng-model="toAddNumber">
+        <input type="number" ng-model="toAddNumber" />
     </md-input-container>
-
     <md-button class="md-fab md-primary" ng-click="addNumber();" ng-disabled="selectedNumbers.length == 4">
         <md-icon md-font-library="material-icons">add</md-icon>
     </md-button>
@@ -22,7 +21,7 @@
     <md-button class="md-raised" ng-click="getNumbers();">Cargar histórico</md-button>
     <ul>
         <li ng-repeat="historic in historial">
-            {{historic}}
+            <historical-entry data="{entry:historic, index: $index}"></historical-entry>
         </li>
     </ul>
 </div>

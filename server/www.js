@@ -46,6 +46,42 @@ app.post('/api/numbers', function (req, res) {
   })
 });
 
+app.patch('/api/numbers', function (req, res) {
+  if (!file.numbers) {
+    file.numbers = [];
+  }
+  file.numbers[req.body.index] = req.body.numbers;
+  fs.writeFile(fileName, JSON.stringify(file), function (err) {
+    if (err) {
+      console.log('Error al crear archivo');
+    } else {
+      res.json({
+        success: true,
+        data: 'Datos guardados',
+        info: ''
+      });
+    }
+  })
+});
+
+app.delete('/api/numbers', function (req, res) {
+  if (!file.numbers) {
+    file.numbers = [];
+  }
+  file.numbers.splice(req.body.index, 1);
+  fs.writeFile(fileName, JSON.stringify(file), function (err) {
+    if (err) {
+      console.log('Error al crear archivo');
+    } else {
+      res.json({
+        success: true,
+        data: 'Datos guardados',
+        info: ''
+      });
+    }
+  })
+});
+
 app.get('/app/*', function (req, res) {
   console.log('/app/ ', req.path)
   res.sendFile(path.join(__dirname + '/../client/' + req.path));

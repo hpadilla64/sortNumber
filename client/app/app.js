@@ -6,6 +6,9 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/sorter', {
             templateUrl: '../app/views/sorter.html'
         })
+        .when('/form', {
+            templateUrl: '../app/views/form.html'
+        })
         .otherwise({
             redirectTo: '/sorter'
         })

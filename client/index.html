@@ -28,6 +28,7 @@
     <div layout="row">
         <div flex="33">
             <a ng-href="#!/sorter">Ordenar números</a>
+            <a ng-href="#!/form">Formulario</a>
         </div>
         <div flex="66">
             <div ng-view></div>
@@ -35,6 +36,8 @@
     </div>
     <script src="/app/app.js"></script>
     <script src="/app/controllers/sorter.js"></script>
+    <script src="/app/controllers/formValidator.js"></script>
+    <script src="/app/components/historicalEntry.js"></script>
     <script>
         angular.bootstrap(document, ['AppSortNumbers']);
     </script>

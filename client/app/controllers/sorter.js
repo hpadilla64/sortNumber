@@ -56,6 +56,19 @@ app.controller('ControllerSorter', function ($window, $scope, $mdToast, $http, $
             });
     }
 
+    $scope.$on('dataChanged', function () {
+        $http({
+                method: 'GET',
+                url: '/api/numbers',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(function successCallback(response) {
+                $scope.historial = response.data.data.numbers;
+            })
+    });
+
     $scope.getNumbers = function () {
         $http({
                 method: 'GET',

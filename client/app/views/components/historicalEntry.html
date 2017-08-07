@@ -1,0 +1,12 @@
+<div>
+    <span ng-show="showData">
+        {{$ctrl.data.entry}}
+        <md-icon md-font-library="material-icons" ng-click="editEntry()">edit</md-icon>
+    </span>
+    <span ng-show="showEdit">
+        <input type="text" ng-model="editField" />
+        <md-icon md-font-library="material-icons" ng-click="patchEntry()">save</md-icon>
+        <md-icon md-font-library="material-icons" ng-click="deleteEntry()">delete</md-icon>
+    </span>
+
+</div>

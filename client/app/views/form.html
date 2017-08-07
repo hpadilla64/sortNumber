@@ -1,0 +1,21 @@
+<div>
+    <form ng-controller="FormValidator" novalidate>
+        <md-input-container class="md-block">
+            <label>Nombre (no permite números)</label>
+            <input type="text" ng-model="nameValidator" ng-change="restrictName()" ng-blur="checkName()" />
+            <md-icon md-font-library="material-icons">{{nameIsCorrect}}</md-icon>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Correo electrónico (solo dominio @midominio.com)</label>
+            <input type="email" ng-model="email" custom-email name="email"/>
+            <span ng-show="form.email.$error.email">No es correo del dominio</span>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>RFC</label>
+            <input type="text" ng-model="rfc" rfc name="rfc"/>
+            <span ng-show="form.rfc.$error.rfc">RFC incorrecto</span>
+        </md-input-container>
+    </form>
+</div>
