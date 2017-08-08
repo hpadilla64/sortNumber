@@ -49,7 +49,6 @@ app.directive('rfc', function () {
                 if (modelValue) {
                     toUpper = modelValue.toUpperCase()
                 }
-                console.log(ctrl.$isEmpty(toUpper), rfcRegexp.test(toUpper), toUpper)
                 return ctrl.$isEmpty(toUpper) || rfcRegexp.test(toUpper);
             }
         }

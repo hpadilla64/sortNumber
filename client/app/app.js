@@ -15,5 +15,4 @@ app.config(function ($routeProvider, $locationProvider) {
 });
 
 app.run(['$rootScope', '$location', '$routeParams', function ($rootScope, $location, $routeParams) {
-   
 }]);

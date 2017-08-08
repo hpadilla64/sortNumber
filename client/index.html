@@ -22,18 +22,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <style>
+        .menuItem {
+            display: block;
+        }
+        </style>
 </head>
 
 <body>
     <div layout="row">
-        <div flex="33">
-            <a ng-href="#!/sorter">Ordenar números</a>
-            <a ng-href="#!/form">Formulario</a>
-        </div>
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
+            <md-content layout-padding>
+                <a ng-href="#!/sorter" class="menuItem">Ordenar números</a>
+                <a ng-href="#!/form" class="menuItem">Formulario</a>
+            </md-content>
+        </md-sidenav>
         <div flex="66">
-            <div ng-view></div>
+            <md-content class="md-padding">
+                <div ng-view></div>
+            </md-content>
         </div>
     </div>
+
     <script src="/app/app.js"></script>
     <script src="/app/controllers/sorter.js"></script>
     <script src="/app/controllers/formValidator.js"></script>
